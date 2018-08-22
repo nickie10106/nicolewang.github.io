@@ -1,0 +1,27 @@
+/*
+Theme Name: Gioz
+Theme URI: http://template.gioz.itembridge.com/
+Author: Itembridge
+Author URI: https://themeforest.net/user/itembridgethemes
+Description: Gioz responsive theme
+Version: 1.0.4
+License: ThemeForest Regular & Extended License
+License URI: http://themeforest.net/licenses/regular_extended
+*/
+
+@import "compass/css3";
+
+@import "mixins-vars";
+
+@import "global";
+@import "main-container";
+@import "content";
+@import "menu";
+@import "header";
+@import "footer";
+@import "notify-me";
+@import "clock";
+@import "carousel";
+@import "contacts";
+@import "social";
+@import "keyframes";

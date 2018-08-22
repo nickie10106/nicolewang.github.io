@@ -1,0 +1,43 @@
+.vis-1 li+li+li+li+li+li+li+li {
+  right: 330px !important;
+}
+
+.vis-1 li+li+li+li+li+li {
+  right: 278px !important;
+}
+
+.vis-1 li+li+li+li+li {
+  right: 226px !important;
+}
+
+.vis-1 li+li+li+li {
+  right: 174px !important;
+}
+
+.vis-1 li+li+li {
+  right: 122px !important;
+}
+
+.vis-1 li+li {
+  right: 70px !important;
+}
+
+.vis-1 li {
+  right: 18px !important;
+}
+
+.open-menu {
+  background: url(../img/ico/dark/menu.png) !important;
+}
+
+.menu .close {
+  background: url(../img/ico/dark/close.png) !important;
+}
+
+.social-btn a.show {
+  background-image: url(../img/ico/dark/share.png) !important;
+}
+
+.social-open a.click {
+  background-image: url(../img/ico/dark/social-close.png) !important;
+}

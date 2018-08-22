@@ -1,0 +1,465 @@
+
+body.dark .notify.closed {
+
+	input[type=email] {
+
+		border: 2px $main_color_dark solid;
+
+	}
+
+}
+
+body.dark .notify {
+
+	input[type="submit"] {
+
+		background: url('../img/ico/dark/send_icon.svg') center center no-repeat transparent;
+
+		&:focus {
+
+			background: url('../img/ico/dark/send_icon.svg') center center no-repeat transparent;
+
+		}
+
+	}
+
+	button {
+
+		&:before {
+
+			border-top: 2px $main_color_dark solid;
+			border-bottom: 2px $main_color_dark solid;
+			border-left: 2px $main_color_dark solid;
+			border-right: 2px $main_color_dark solid;
+
+		}
+
+		&.hack {
+
+			&:before {
+
+				border-right: 4px $main_color_dark solid;
+				border-left: 4px $main_color_dark solid;
+
+			}
+
+		}
+
+		&.border-6 {
+
+			&:before {
+
+				border-right: 8px $main_color_dark solid;
+				border-left: 8px $main_color_dark solid;
+
+			}
+
+		}
+
+		&.border-8 {
+
+			&:before {
+
+				border-right: 8px $main_color_dark solid;
+				border-left: 8px $main_color_dark solid;
+
+			}
+
+		}
+
+	}
+
+}
+
+body.light .notify.closed {
+
+	input[type=email] {
+
+		border: 2px $main_color_light solid;
+
+	}
+
+}
+
+body.light .notify {
+
+	input[type="submit"] {
+
+		background: url('../img/ico/light/send_icon.svg') center center no-repeat transparent;
+
+		&:focus {
+
+			background: url('../img/ico/light/send_icon.svg') center center no-repeat transparent;
+
+		}
+
+	}
+
+	button {
+
+		color: $main_color_light;
+
+		&:before {
+
+			border-top: 2px $main_color_light solid;
+			border-bottom: 2px $main_color_light solid;
+			border-left: 2px $main_color_light solid;
+			border-right: 2px $main_color_light solid;
+
+		}
+
+		&.hack {
+
+			&:before {
+
+				border-right: 4px $main_color_light solid;
+				border-left: 4px $main_color_light solid;
+
+			}
+
+		}
+
+		&.border-6 {
+
+			&:before {
+
+				border-right: 8px $main_color_light solid !important;
+				border-left: 8px $main_color_light solid !important;
+
+			}
+
+		}
+
+		&.border-8 {
+
+			&:before {
+
+				border-right: 8px $main_color_light solid !important;
+				border-left: 8px $main_color_light solid !important;
+
+			}
+
+		}
+
+	}
+
+}
+
+.notify {
+
+	position: relative;
+	display: inline-block;
+	z-index: 2;
+
+	&:not(.closed) {
+
+		input[type=email] {
+
+			-webkit-animation: notify-input-email 0.5s 0.5s forwards;
+			animation: notify-input-email 1s 0s forwards;
+
+		}
+
+		input[type=submit] {
+
+			@include animation(notify-input-submit 0.5s 0.5s forwards);
+
+		}
+
+		button {
+
+			display: block;
+			position: relative;
+
+			@include animation(notify-input-button 0.3s 0s forwards);
+
+		}
+
+	}
+
+	&.closed {
+
+		&:before {
+
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			width: 100%;
+			content: ' ';
+			height: 100%;
+			z-index: -8;
+
+		}
+
+		input[type="email"],
+		input[type="submit"] {
+
+			z-index: -9;
+
+		}
+
+		button[type="button"] {
+
+			min-width: 164px;
+			width: 164px;
+
+		}
+
+		input[type=email] {
+
+			opacity: 0 !important;
+
+		}
+
+	}
+
+	input[type="email"],
+	input[type="submit"] {
+
+		position: relative;
+		top: -60px;
+		opacity: 0;
+		@include animation(notify-input-email-hide 0.2s 0s forwards);
+		border: 0 !important;
+
+	}
+
+	input[type="email"] {
+
+		position: relative;
+		display: inline-block;
+		left: 0;
+		margin-top: 2px;
+		height: 56px;
+		padding: 0 28px 0 28px;
+		text-indent: 0px;
+		transition: opacity 0s, background 1s;
+		-webkit-transition: opacity 0s, background 0.5s;
+		background: transparent;
+
+	}
+
+	input[type="submit"] {
+
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 2px;
+		text-align: center;
+		text-indent: 7px;
+		height: 56px;
+		width: 70px;
+		border: 0;
+		@include transition(opacity 0.5s);
+		color: transparent;
+
+	}
+
+	&.valid {
+
+		input[type=email] {
+
+			background: rgba(0, 210, 255, 0.4);
+
+		}
+
+	}
+
+	&.invalid {
+
+		input[type=email] {
+
+			background: rgba(255, 0, 48, 0.4);
+
+		}
+
+	}
+
+	button {
+
+		margin: 0 auto;
+		display: block;
+		min-width: auto;
+		position: relative;
+		border: 0 !important;
+		color: transparent;
+		@include transition((color 0.2s, background 0.2s));
+
+		&:hover {
+
+			background: transparent !important;
+
+		}
+
+		&:focus {
+
+			background: inherit;
+			box-shadow: none;
+
+		}
+
+		&:before {
+
+			display: block;
+			content: ' ';
+			position: absolute;
+			z-index: -1;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+
+			@include transition((color 0.2s, background 0.2s));
+			@include transform((scaleX(1) translate3d(0, 0, 0)));
+			width: 100%;
+			left: 0%;
+
+		}
+
+		&.hack {
+
+			@include animation(notify-hack 0.5s 0s);
+
+			&:before {
+
+				@include animation(notify-hack-before 0.4s 0s forwards);
+
+			}
+
+		}
+
+	}
+
+	&:not(.closed) {
+
+		button {
+
+			&:before {
+
+				@include animation(notify-button-open 0.5s 0s forwards);
+
+			}
+
+		}
+
+	}
+
+}
+
+body:not(.touch) .notify.closed button:hover:before {
+	background: #fff;
+}
+
+body.ie9-lower {
+
+	.notify {
+
+		button.hack:before {
+
+			border: 2px #fff solid !important;
+			width: 164px;
+
+		}
+
+		input[type=email] {
+
+			opacity: 1;
+			border: 2px #fff solid !important;
+
+		}
+
+		input[type=submit] {
+
+			opacity: 1;
+			z-index: 3;
+
+		}
+
+		button {
+
+			opacity: 0;
+			z-index: -2;
+			width: 164px !important;
+
+		}
+
+		&.closed {
+
+			input[type=email] {
+
+				width: 164px;
+
+			}
+
+			input[type=email],
+			input[type=submit] {
+
+				opacity: 0;
+				z-index: -2;
+
+			}
+
+			button {
+
+				opacity: 1;
+				z-index: 2;
+
+			}
+
+		}
+
+	}
+
+}
+
+.notify input::-webkit-input-placeholder {
+	opacity: 0.4;
+}
+
+.notify input::-moz-placeholder {
+	opacity: 0.4;
+}
+
+.notify input:-moz-placeholder {
+	opacity: 0.4;
+}
+
+.notify input:-ms-input-placeholder {
+	opacity: 0.4;
+}
+
+.notify.invalid input::-webkit-input-placeholder {
+	opacity: 1;
+}
+
+.notify.invalid input::-moz-placeholder {
+	opacity: 1;
+}
+
+.notify.invalid input:-moz-placeholder {
+	opacity: 1;
+}
+
+.notify.invalid input:-ms-input-placeholder {
+	opacity: 1;
+}
+
+.notify.valid input::-webkit-input-placeholder {
+	opacity: 1;
+}
+
+.notify.valid input::-moz-placeholder {
+	opacity: 1;
+}
+
+.notify.valid input:-moz-placeholder {
+	opacity: 1;
+}
+
+.notify.valid input:-ms-input-placeholder {
+	opacity: 1;
+}
+
+.notify input::-ms-clear {
+	display: none;
+}

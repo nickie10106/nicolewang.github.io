@@ -1,0 +1,194 @@
+body.dark {
+
+	.social-btn {
+
+		a {
+
+			&.show {
+
+				background-image: url(../img/ico/dark/share.svg);
+
+			}
+
+		}
+
+	}
+
+	.social-open {
+
+		a.click {
+
+			background-image: url(../img/ico/dark/social-close.svg);
+
+		}
+
+	}
+
+}
+
+body.light {
+
+	.social-btn {
+
+		a {
+
+			&.show {
+
+				background-image: url(../img/ico/light/share.svg);
+
+			}
+
+		}
+
+	}
+
+	.social-open {
+
+		a.click {
+
+			background-image: url(../img/ico/light/social-close.svg);
+
+		}
+
+	}
+
+}
+
+.social-btn {
+
+	display: block;
+	height: 27px;
+	right: 50%;
+	right: -webkit-calc(50% - 13px);
+	right: calc(50% - 13px);
+	bottom: 50px;
+	background: transparent;
+
+	a {
+
+		@include transition(opacity 0.24s);
+		cursor: pointer;
+
+		&.show {
+
+			width: 27px;
+			height: 27px;
+			top: 4px;
+			top: 2px;
+			right: 0;
+			width: 27px;
+			height: 27px;
+			z-index: 9;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			border: 0;
+
+		}
+
+		&.show,
+		&.click {
+
+			opacity: 0.5;
+
+		}
+
+		&.show:hover,
+		&.click:hover {
+
+			opacity: 1;
+
+		}
+
+	}
+
+	& > a {
+
+		display: block;
+		position: absolute;
+		cursor: pointer !important;
+
+	}
+
+	ul {
+
+		float: left;
+		position: relative;
+		@include transition((0.4s margin ease, 0.24s opacity));
+
+		&.opacity-initial {
+
+			opacity: 0;
+
+		}
+
+		li {
+
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			position: absolute;
+			top: 0;
+			border-radius: 32px;
+			background: transparent;
+			opacity: 0;
+			@include transition(all 0.35s);
+
+			&:before {
+
+				content: '';
+
+			}
+
+			img {
+
+				display: block;
+				float: left;
+				margin-top: -28px;
+				margin-left: -1px;
+				padding: 0;
+				border: 0;
+				@include transform((translate3d(0px, 0px, 0px)));
+				@include transition(opacity 0.24s);
+				opacity: 0.5;
+
+				&:hover {
+
+					opacity: 1;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.social-open {
+
+	a.click {
+		top: 4px !important;
+		width: 24px !important;
+		height: 24px !important;
+		background-size: 90% 90%;
+	}
+
+	ul {
+
+		opacity: 1;
+
+	}
+
+	.social-btn {
+
+		li {
+
+			opacity: 1;
+
+		}
+
+	}
+
+}

@@ -1,0 +1,175 @@
+body.dark {
+	section {
+		&.contacts {
+
+			input,
+			textarea {
+
+				color: $main_color_dark;
+				border-bottom: 2px rgba(255, 255, 255, 0.4) solid;
+
+				&:focus {
+
+					border-bottom: 2px rgba(255, 255, 255, 1) solid;
+
+				}
+
+			}
+		}
+	}
+}
+
+body.light {
+	section {
+		&.contacts {
+
+			input,
+			textarea {
+
+				color: $main_color_light;
+				border-bottom: 2px rgba(0, 0, 0, 0.4) solid;
+
+				&:focus {
+
+					border-bottom: 2px rgba(0, 0, 0, 1) solid;
+
+				}
+
+			}
+		}
+	}
+}
+
+section {
+
+	&.contacts {
+
+		a[href^=tel] {
+
+			text-decoration: inherit;
+			color: inherit;
+
+		}
+
+		.row {
+
+			margin: 0 auto 40px;
+			padding-bottom: 40px;
+
+		}
+
+		input,
+		textarea,
+		button {
+
+			width: 100%;
+			max-width: 100%;
+
+		}
+
+		textarea {
+
+			height: 140px;
+			margin: 0 0 46px 0;
+
+		}
+
+		input, textarea {
+
+			@include transition((opacity 0.5s, border 0.5s));
+			border-right: 0;
+			border-left: 0;
+			border-top: 0;
+
+		}
+
+		input:focus,
+		textarea:focus {
+
+			opacity: 1;
+
+		}
+
+		.col-1 {
+
+			line-height: 28px;
+
+		}
+
+		.form-message {
+
+			height: 30px;
+			line-height: 30px;
+			letter-spacing: 2px;
+			margin-top: -35px;
+			text-transform: uppercase;
+			font-family: 'Droid Sans';
+			text-align: center;
+			font-size: 0.8rem;
+			@include transition(background 0.4s);
+
+			span {
+
+				display: block;
+				color: #fff;
+				transform: translate3d(0, 0, 0);
+				@include transition(opacity 0.4s);
+				opacity: 0;
+
+				&.visible {
+
+					opacity: 1;
+
+				}
+
+				&.sent {
+
+					background: rgba(0, 210, 255, 0.5);
+
+				}
+
+				&.text-danger {
+
+					background: rgba(144, 21, 48, 0.5);
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.contacts input::-webkit-input-placeholder {
+	opacity: 0.4;
+}
+
+.contacts input::-moz-placeholder {
+	opacity: 0.4;
+}
+
+.contacts input:-moz-placeholder {
+	opacity: 0.4;
+}
+
+.contacts input:-ms-input-placeholder {
+	opacity: 0.4;
+}
+
+.contacts textarea::-webkit-input-placeholder {
+	opacity: 0.4;
+}
+
+.contacts textarea::-moz-placeholder {
+	opacity: 0.4;
+}
+
+.contacts textarea:-moz-placeholder {
+	opacity: 0.4;
+}
+
+.contacts textarea:-ms-input-placeholder {
+	opacity: 0.4;
+}

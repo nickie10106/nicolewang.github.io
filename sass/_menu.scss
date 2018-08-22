@@ -1,0 +1,262 @@
+body.dark .menu {
+
+	a {
+
+		&.active {
+
+			color: $main_color_dark;
+
+		}
+
+	}
+
+	.close {
+
+		background: url(../img/ico/dark/close.svg);
+
+	}
+
+	&:before {
+
+		background-color: #212b32;
+
+	}
+
+}
+
+body.light .menu {
+
+	a {
+
+		&.active {
+
+			color: $main_color_light;
+
+		}
+
+	}
+
+	.close {
+
+		background: url(../img/ico/light/close.svg);
+
+	}
+
+	&:before {
+
+		background-color: #f1f1f1;
+
+	}
+
+}
+
+body.dark {
+
+	.open-menu {
+
+		color: $main_color_dark;
+		background: url(../img/ico/dark/menu.svg);
+
+	}
+}
+
+body.light {
+
+	.open-menu {
+
+		color: $main_color_light;
+		background: url(../img/ico/light/menu.svg);
+
+	}
+
+}
+
+.menu {
+
+	position: absolute;
+	@include absolute-zero;
+
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+
+	@include transform((perspective(1px) scale(0.9) translate3d(0, 0, 0)));
+
+	box-sizing: border-box;
+	z-index: -1;
+	margin: 0;
+	backface-visibility: hidden;
+	font-family: 'Geared Slab';
+
+	@include transition((transform 0.4s, opacity 0.4s));
+
+	&:before {
+
+		position: absolute;
+		display: block;
+		content: ' ';
+
+	}
+
+	&.visible {
+
+		-webkit-transform: scale(1);
+		transform: perspective(1px) scale(1);
+		opacity: 1 !important;
+		z-index: 4;
+
+		a {
+
+			opacity: 1;
+
+		}
+
+	}
+
+	.close {
+
+		position: fixed;
+		display: block;
+		width: 44px;
+		height: 44px;
+
+	}
+
+	a.close {
+
+		opacity: 0.5;
+		@include transition(0.25s);
+
+		&:hover {
+
+			opacity: 1;
+
+		}
+
+	}
+
+	span {
+
+		display: inline-block;
+
+	}
+
+	a {
+
+		display: block;
+		clear: both;
+		float: none;
+		opacity: 0;
+		@include transition((opacity 0.8s, color 0.24s));
+
+		&:focus,
+		&:active {
+
+			border: 0;
+			outline: none;
+
+		}
+
+	}
+
+	article {
+
+		width: 100%;
+		height: 100%;
+
+		& > div {
+
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			text-align: center;
+
+		}
+
+		& > span {
+
+			a {
+
+				display: block;
+				width: auto;
+				clear: both;
+
+			}
+
+		}
+
+	}
+
+	.wrapper-table {
+
+		display: table;
+		height: 100%;
+
+	}
+
+	.wrapper-cell {
+
+		display: table-cell;
+		vertical-align: middle;
+		height: 100%;
+
+	}
+
+	.wrapper {
+
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+	}
+
+	.table {
+
+		position: absolute;
+		display: table;
+
+		@include absolute-zero;
+
+		padding: 0;
+		margin: 0;
+
+	}
+
+	.table-cell {
+
+		position: relative;
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+
+	}
+
+}
+
+.menu-center-vertical {
+
+	position: absolute;
+	top: 50%;
+	height: auto;
+	@include center-vertical;
+
+}
+
+.open-menu {
+
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 50px;
+	width: 30px;
+	height: 22px;
+	font-size: 1.375em;
+	cursor: pointer;
+	@include center-vertical;
+}
